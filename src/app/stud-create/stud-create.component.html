@@ -1,0 +1,101 @@
+<h1>Add Student</h1>
+<div class="container mt-5">
+  <form class="row g-3 needs-validation m-5" [formGroup]="userForm" (ngSubmit)="submit_details()" novalidate>
+    <div class="col-md-6">
+      <label for="validationCustom01" class="form-label">Name</label>
+      <input [ngClass]="{
+            'has-error':userForm.controls.name.touched && userForm.controls.name.invalid,
+            'has-success' : userForm.controls.name.touched && userForm.controls.name.valid
+        }" type="text" class="form-control" formControlName="name">
+      <span class="color" *ngIf="userForm.controls.name.touched && userForm.controls.name.invalid">Please enter Valid
+        name</span>
+
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom02" class="form-label">Date of birth</label>
+      <input [ngClass]="{
+            'has-error':userForm.controls.dob.touched && userForm.controls.dob.invalid,
+            'has-success' : userForm.controls.dob.touched && userForm.controls.dob.valid
+        }" type="date" class="form-control" formControlName="dob">
+      <span class="color" *ngIf="userForm.controls.name.touched && userForm.controls.name.invalid">Please enter Valid
+        dob</span>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustomUsername" class="form-label">Skills</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">@</span>
+        <input [ngClass]="{
+                'has-error':userForm.controls.skills.touched && userForm.controls.skills.invalid,
+                'has-success' : userForm.controls.skills.touched && userForm.controls.skills.valid
+            }" type="text" class="form-control" formControlName="skills" id="validationCustomUsername"
+          aria-describedby="inputGroupPrepend" required>
+        <span class="color" *ngIf="userForm.controls.skills.touched && userForm.controls.skills.invalid">Please enter
+          Valid skills</span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">Department</label>
+      <select [ngClass]="{
+          'has-error':userForm.controls.dept.touched && userForm.controls.dept.invalid,
+          'has-success' : userForm.controls.dept.touched && userForm.controls.dept.valid
+      }" class="form-select" formControlName="dept" id="validationCustom04" required>
+        <option selected disabled value="">Choose...</option>
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        <option value="MECH">MECH</option>
+        <option value="CIVIL">CIVIL</option>
+        <option value="IT">IT</option>
+      </select>
+      <span class="color" *ngIf="userForm.controls.dept.touched && userForm.controls.dept.invalid">Choose dept</span>
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">AddressLine1</label>
+      <input [ngClass]="{
+            'has-error':userForm.controls.addr.touched && userForm.controls.addr.invalid,
+            'has-success' : userForm.controls.addr.touched && userForm.controls.addr.valid
+        }" type="text" class="form-control" formControlName="addr" id="inputAddress" placeholder="streetno, landmark">
+      <span class="color" *ngIf="userForm.controls.addr.touched && userForm.controls.addr.invalid">Please enter valid
+        addr</span>
+    </div>
+
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">City</label>
+      <input [ngClass]="{
+            'has-error':userForm.controls.city.touched && userForm.controls.city.invalid,
+            'has-success' : userForm.controls.city.touched && userForm.controls.city.valid
+        }" type="text" class="form-control" formControlName="city" id="validationCustom03" required>
+      <span class="color" *ngIf="userForm.controls.city.touched && userForm.controls.city.invalid">Please enter valid
+        city</span>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">State</label>
+      <input [ngClass]="{
+        'has-error':userForm.controls.state.touched && userForm.controls.state.invalid,
+        'has-success' : userForm.controls.state.touched && userForm.controls.state.valid
+    }" type="text" class="form-control" formControlName="state" id="validationCustom03" required>
+      <span class="color" *ngIf="userForm.controls.state.touched && userForm.controls.state.invalid">Choose state</span>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">country</label>
+      <input [ngClass]="{
+            'has-error':userForm.controls.country.touched && userForm.controls.country.invalid,
+            'has-success' : userForm.controls.country.touched && userForm.controls.country.valid
+        }" type="text" class="form-control" formControlName="country" id="validationCustom03" required>
+      <span class="color" *ngIf="userForm.controls.country.touched && userForm.controls.country.invalid">Please enter valid
+        country</span>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">zipcode</label>
+      <input [ngClass]="{
+            'has-error':userForm.controls.zipcode.touched && userForm.controls.zipcode.invalid,
+            'has-success' : userForm.controls.zipcode.touched && userForm.controls.zipcode.valid
+        }" type="text" class="form-control" formControlName="zipcode" id="validationCustom03" required>
+      <span class="color" *ngIf="userForm.controls.zipcodetouched && userForm.controls.zipcode.invalid">Please enter valid
+        zipcode</span>
+    </div>
+    <div class="col-12">
+      <input type="submit" class="btn btn-primary" value="Submit">
+    </div>
+  </form>
+</div>
